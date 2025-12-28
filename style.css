@@ -7,38 +7,61 @@
 
 /* HEADER SECTION */
 
-header nav h2{
-    color: rgb(145, 237, 255);
-    text-shadow: 0 0 50px rgba(145, 237, 255, 0.3);
+button:hover {
+    box-shadow: 0 4px 12px rgba(145, 237, 255, 0.6);
+    transform: translateY(-2px);
 }
 
-header nav{
+header nav h2 {
+    color: rgb(145, 237, 255);
+    text-shadow: 0 0 100px rgba(145, 237, 255, 0.3);
+}
+
+header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blueviolet;
+    padding: 10px 0;
 }
 
-header nav ul{
+header nav ul {
     display: flex;
     align-items: center;
     list-style-type: none;
-    gap: 10px;
-    
+    gap: 20px;
+
 }
 
-header nav ul li a{
+header nav ul li {
+    padding: 10px;
+}
+
+header nav ul li:hover {
+    border: 2px solid rgb(145, 237, 255);
+    box-shadow: 0 0 30px rgba(145, 237, 255, 0.3);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+header nav ul li a {
     text-decoration: none;
     color: rgb(145, 237, 255);
 }
 
-header nav div button{
-    border: none;
-    border-radius: 15px;
-    padding: 7px;
+header nav div {
+    display: flex;
+    gap: 20px;
 }
 
-header nav div button a{
+header nav div button {
+    border-radius: 20px;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid rgb(145, 237, 255);
+    box-shadow: 0 0 30px rgba(145, 237, 255, 0.3);
+}
+
+header nav div button a {
     text-decoration: none;
     color: rgb(145, 237, 255);
 }
@@ -47,7 +70,7 @@ header nav div button a{
     background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
 }
 
-.quiz-container { 
+.quiz-container {
     width: min(90vw, 420px);
     padding: 30px;
     border-radius: 20px;
