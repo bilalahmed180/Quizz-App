@@ -6,6 +6,9 @@
 }
 
 /* HEADER SECTION */
+button{
+    transition: 0.3s ease;
+}
 
 button:hover {
     box-shadow: 0 4px 12px rgba(145, 237, 255, 0.6);
@@ -22,25 +25,28 @@ header nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    position: sticky;
+    top: 0;
 }
 
 header nav ul {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     list-style-type: none;
     gap: 20px;
-
 }
 
 header nav ul li {
     padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: 0.3s ease;
 }
 
 header nav ul li:hover {
     border: 2px solid rgb(145, 237, 255);
     box-shadow: 0 0 30px rgba(145, 237, 255, 0.3);
-    border-radius: 20px;
-    padding: 10px;
 }
 
 header nav ul li a {
@@ -74,8 +80,17 @@ header nav div button a:hover {
     color: rgb(99, 190, 209);
 }
 
+/* HEADER SECTION END */
+
 .quizz-body {
     background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+}
+
+.quiz-wrapper {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .quiz-container {
@@ -126,7 +141,7 @@ header nav div button a:hover {
     display: none;
 }
 
-/* SIGN-UP CSS START */
+/* SIGN-UP & Login CSS START */
 
 .sign-up-body {
     min-height: 100vh;
@@ -225,11 +240,4 @@ header nav div button a:hover {
 }
 
 
-/* SIGN-UP CSS END */
-
-
-/* LOGIN CSS START */
-
-
-
-/* LOGIN CSS END */
+/* SIGN-UP & Login CSS END */
