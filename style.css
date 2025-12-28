@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+/* HEADER SECTION */
+
+header nav h2{
+    color: rgb(145, 237, 255);
+    text-shadow: 0 0 50px rgba(145, 237, 255, 0.3);
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blueviolet;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 10px;
+    
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: rgb(145, 237, 255);
+}
+
+header nav div button{
+    border: none;
+    border-radius: 15px;
+    padding: 7px;
+}
+
+header nav div button a{
+    text-decoration: none;
+    color: rgb(145, 237, 255);
+}
+
+.quizz-body {
+    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+}
+
+.quiz-container { 
+    width: min(90vw, 420px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid rgb(145, 237, 255);
+    box-shadow: 0 0 30px rgba(145, 237, 255, 0.3);
+    text-align: center;
+}
+
+.start-btn,
+.next-btn {
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(145, 237, 255);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quiz-form {
+    margin-top: 20px;
+}
+
+.quiz-form h2 {
+    color: rgb(145, 237, 255);
+    margin-bottom: 20px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(145, 237, 255);
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.option input {
+    accent-color: rgb(145, 237, 255);
+}
+
+.hidden {
+    display: none;
+}
+
+/* SIGN-UP CSS START */
+
+.sign-up-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+}
+
+.circle-border {
+    position: relative;
+    width: min(90vw, 420px);
+    height: min(90vw, 420px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(rgb(145, 237, 255),
+            transparent,
+            rgb(145, 237, 255));
+    animation: rotate 4s linear infinite;
+}
+
+.circle-border::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+}
+
+.sign-up-form {
+    position: relative;
+    z-index: 1;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 20px;
+}
+
+.sign-up {
+    color: rgb(145, 237, 255);
+}
+
+.form-input {
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid rgb(145, 237, 255);
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(145, 237, 255);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sign-up-form a {
+    text-decoration: none;
+    color: rgb(145, 237, 255);
+}
+
+/* 🔁 Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 📱 Small devices */
+@media (max-width: 480px) {
+    .circle-border {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+
+/* SIGN-UP CSS END */
