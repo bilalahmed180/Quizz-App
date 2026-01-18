@@ -5,19 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-
 <body class="quizz-body container">
+
     <header>
         <nav>
             <h2>Quizz App</h2>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
             </ul>
             <div>
                 <button><a href="./sign-up.html">Sign Up</a></button>
@@ -28,17 +30,53 @@
 
     <div class="quiz-wrapper">
         <div class="quiz-container">
+            <div>
+                <p class="m-0">Click Start Button And Start HTML Quiz</p>
+                <p class="m-0 mt-1" id="totalMcqsText"></p>
+            </div>
+
             <button id="startbtn" class="start-btn">Start Quiz</button>
-    
-            <form id="quizForm" class="quiz-form hidden">
+        </div>
+    </div>
+
+    <!-- ✅ MODAL -->
+    <div id="quizModal" class="quiz-modal hidden">
+        <div class="quiz-modal-content">
+
+            <div class="quiz-modal-header">
+                <div>
+                    <h3 class="m-0">HTML Quiz</h3>
+                    <p id="progressText" class="m-0 small">1/20</p>
+                </div>
+
+                <div class="d-flex gap-2 align-items-center">
+                    <button type="button" id="closeModal" class="close-btn">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <form id="quizForm" class="quiz-form">
                 <h2 id="question"></h2>
                 <div id="options"></div>
                 <button type="submit" class="next-btn">Next</button>
             </form>
+
+            <div id="resultBox" class="result-box hidden">
+                <h2 class="result-title">Quiz Completed 🎉</h2>
+                <p id="finalScore" class="result-score"></p>
+
+                <div class="result-actions">
+                    <button id="restartBtn" class="start-btn">Restart</button>
+                    <button id="closeResultBtn" class="next-btn">Close</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <script src="script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

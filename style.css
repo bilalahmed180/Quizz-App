@@ -5,9 +5,13 @@
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
+body {
+    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+}
+
 /* HEADER SECTION */
-button{
-    transition: 0.3s ease;
+button {
+    transition: 0.4s ease;
 }
 
 button:hover {
@@ -35,13 +39,14 @@ header nav ul {
     flex-wrap: wrap;
     list-style-type: none;
     gap: 20px;
+    margin: 0;
 }
 
 header nav ul li {
     padding: 10px;
     border: 2px solid transparent;
     border-radius: 20px;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
 }
 
 header nav ul li:hover {
@@ -65,7 +70,7 @@ header nav div {
 
 header nav div button {
     border-radius: 20px;
-    padding: 10px;
+    padding: 10px 16px;
     background: transparent;
     border: 2px solid rgb(145, 237, 255);
     box-shadow: 0 0 30px rgba(145, 237, 255, 0.3);
@@ -80,8 +85,7 @@ header nav div button a:hover {
     color: rgb(99, 190, 209);
 }
 
-/* HEADER SECTION END */
-
+/* QUIZ HOME */
 .quizz-body {
     background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
 }
@@ -94,14 +98,19 @@ header nav div button a:hover {
 }
 
 .quiz-container {
-    width: min(90vw, 420px);
-    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: min(90vw, 520px);
+    padding: 16px 18px;
     border-radius: 20px;
     border: 2px solid rgb(145, 237, 255);
     box-shadow: 0 0 30px rgba(145, 237, 255, 0.3);
-    text-align: center;
+    color: rgb(145, 237, 255);
 }
 
+/* Buttons */
 .start-btn,
 .next-btn {
     padding: 12px 20px;
@@ -112,13 +121,47 @@ header nav div button a:hover {
     font-size: 16px;
 }
 
-.quiz-form {
-    margin-top: 20px;
+/* Modal */
+.quiz-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.quiz-modal-content {
+    width: min(92vw, 600px);
+    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+    border: 2px solid rgb(145, 237, 255);
+    box-shadow: 0 0 30px rgba(145, 237, 255, 0.35);
+    border-radius: 20px;
+    padding: 20px;
+    animation: modalPop 0.35s ease;
+}
+
+.quiz-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(145, 237, 255);
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: rgb(145, 237, 255);
+    font-size: 26px;
+    cursor: pointer;
 }
 
 .quiz-form h2 {
     color: rgb(145, 237, 255);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .option {
@@ -141,103 +184,55 @@ header nav div button a:hover {
     display: none;
 }
 
-/* SIGN-UP & Login CSS START */
-
-.sign-up-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
-}
-
-.circle-border {
-    position: relative;
-    width: min(90vw, 420px);
-    height: min(90vw, 420px);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: conic-gradient(rgb(145, 237, 255),
-            transparent,
-            rgb(145, 237, 255));
-    animation: rotate 4s linear infinite;
-}
-
-.circle-border::after {
-    content: "";
-    position: absolute;
-    inset: 6px;
-    border-radius: 50%;
-    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
-}
-
-.sign-up-form {
-    position: relative;
-    z-index: 1;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+/* Result Box */
+.result-box {
+    margin-top: 10px;
     text-align: center;
-    padding: 20px;
 }
 
-.sign-up {
+.result-title {
     color: rgb(145, 237, 255);
+    margin-bottom: 10px;
 }
 
-.form-input {
-    padding: 10px 12px;
-    border-radius: 20px;
-    border: 1px solid rgb(145, 237, 255);
-    background: transparent;
-    color: white;
-    outline: none;
+.result-score {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 17px;
+    margin-bottom: 15px;
 }
 
-.form-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+.result-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
 }
 
-.form-btn {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    background-color: rgb(145, 237, 255);
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.sign-up-form a {
-    text-decoration: none;
-    color: rgb(145, 237, 255);
-}
-
-@keyframes rotate {
+/* Animations */
+@keyframes modalPop {
     from {
-        transform: rotate(0deg);
+        transform: scale(0.9);
+        opacity: 0;
     }
 
     to {
-        transform: rotate(360deg);
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
-@media (max-width: 480px) {
-    .circle-border {
-        width: 320px;
-        height: 320px;
+@media (max-width: 600px) {
+    .quiz-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav div {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
-
-
-/* SIGN-UP & Login CSS END */
