@@ -85,7 +85,6 @@ header nav div button a:hover {
     color: rgb(99, 190, 209);
 }
 
-/* QUIZ HOME */
 .quizz-body {
     background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
 }
@@ -110,7 +109,6 @@ header nav div button a:hover {
     color: rgb(145, 237, 255);
 }
 
-/* Buttons */
 .start-btn,
 .next-btn {
     padding: 12px 20px;
@@ -120,6 +118,264 @@ header nav div button a:hover {
     cursor: pointer;
     font-size: 16px;
 }
+
+/* ✅ SUBJECT DROPDOWN CSS START (ADDED) */
+.subject-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.subject-row label {
+    color: rgba(145, 237, 255, 0.9);
+    font-size: 14px;
+}
+
+.subject-select {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(145, 237, 255, 0.6);
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+    outline: none;
+}
+
+.subject-select option {
+    background: rgb(0, 1, 44);
+    color: white;
+
+}
+/* ✅ SUBJECT DROPDOWN CSS END */
+
+
+/* SIGN-UP & Login CSS START */
+
+.headerBack {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+.back {
+    margin: 0;
+}
+
+.sign-up-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+    position: relative;
+}
+
+.circle-border {
+    position: relative;
+    width: min(90vw, 420px);
+    height: min(90vw, 420px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(rgb(145, 237, 255), transparent, rgb(145, 237, 255));
+    animation: rotate 4s linear infinite;
+}
+
+.circle-border::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(0, 1, 44), rgb(1, 0, 21));
+}
+
+.sign-up-form {
+    position: relative;
+    z-index: 1;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 20px;
+}
+
+.sign-up {
+    color: rgb(145, 237, 255);
+}
+
+.form-input {
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid rgb(145, 237, 255);
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(145, 237, 255);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sign-up-form a {
+    text-decoration: none;
+    color: rgb(145, 237, 255);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-border {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* SIGN-UP & Login CSS END */
+
+
+/* ABOUT CSS START */
+
+.back a {
+    text-decoration: none;
+    color: black;
+}
+
+.back a:hover {
+    box-shadow: 0 4px 12px rgba(145, 237, 255, 0.6);
+}
+
+.about-container {
+    width: min(90vw, 900px);
+    padding: 35px;
+    border-radius: 20px;
+    border: 2px solid rgb(145, 237, 255);
+    box-shadow: 0 0 30px rgba(145, 237, 255, 0.25);
+    animation: fadeUp 0.8s ease;
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 5vw 0;
+}
+
+.about-text {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.about-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(145, 237, 255, 0.35);
+    border-radius: 18px;
+    padding: 18px;
+    transition: 0.35s ease;
+    animation: glowIn 0.9s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(145, 237, 255, 0.35);
+}
+
+.about-card h3,
+h2 {
+    color: rgb(145, 237, 255);
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px rgba(145, 237, 255, 0.35);
+}
+
+.about-card p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+.about-list {
+    margin-left: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+}
+
+.about-footer {
+    margin-top: 25px;
+    text-align: center;
+    color: rgba(145, 237, 255, 0.85);
+    font-size: 16px;
+    animation: fadeUp 1s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ABOUT CSS END */
 
 /* Modal */
 .quiz-modal {
@@ -234,5 +490,10 @@ header nav div button a:hover {
     header nav div {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    /* ✅ Subject dropdown responsive */
+    .subject-select {
+        max-width: 100%;
     }
 }
